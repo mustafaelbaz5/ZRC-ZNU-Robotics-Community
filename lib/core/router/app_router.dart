@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zrc/modules/student/features/home/ui/home_screen.dart';
 
 import '../auth/ui/login_screen.dart';
 import '../onboarding/ui/on_boarding_screen.dart';
@@ -15,6 +16,9 @@ class AppRouter {
 
       case Routes.loginScreen:
         return MaterialPageRoute(builder: (_) => const LoginScreen());
+
+      case Routes.studentHomeScreen:
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
 
       default:
         return null;
