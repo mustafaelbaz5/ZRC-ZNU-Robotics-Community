@@ -5,7 +5,7 @@ import '../onboarding/ui/on_boarding_screen.dart';
 import 'routes.dart';
 
 class AppRouter {
-  Route<dynamic> generateRoute(RouteSettings settings) {
+  Route<dynamic>? generateRoute(RouteSettings settings) {
     // ignore: unused_local_variable
     final arguments = settings.arguments;
 
@@ -17,10 +17,7 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const LoginScreen());
 
       default:
-        return MaterialPageRoute(
-          builder: (_) =>
-              const Scaffold(body: Center(child: Text('Page not found'))),
-        );
+        return null;
     }
   }
 }
