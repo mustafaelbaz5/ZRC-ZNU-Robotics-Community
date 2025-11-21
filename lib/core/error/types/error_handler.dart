@@ -1,6 +1,7 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:zrc/core/error/handlers/supabase_error_handler.dart';
-import 'package:zrc/core/error/models/app_error.dart';
+
+import '../handlers/supabase_error_handler.dart';
+import '../models/app_error.dart';
 
 class ErrorHandler {
   /// Handle any error and convert it to AppError

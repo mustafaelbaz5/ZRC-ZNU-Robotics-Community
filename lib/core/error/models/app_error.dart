@@ -1,5 +1,5 @@
-import 'package:zrc/core/error/models/error_details.dart';
-import 'package:zrc/core/error/types/error_type.dart';
+import 'error_details.dart';
+import '../types/error_type.dart';
 
 class AppError implements Exception {
   final String message;

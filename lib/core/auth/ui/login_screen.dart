@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:zrc/core/auth/logic/cubit/auth_cubit.dart';
-import 'package:zrc/core/auth/ui/widgets/background_shapes.dart';
-import 'package:zrc/core/auth/ui/widgets/log_in_header.dart';
-import 'package:zrc/core/extensions/navigation.dart';
-import 'package:zrc/core/router/routes.dart';
-import 'package:zrc/core/themes/app_colors.dart';
-import 'package:zrc/core/themes/app_text_styles.dart';
-import 'package:zrc/core/utils/regex.dart';
-import 'package:zrc/core/utils/spacing.dart';
-import 'package:zrc/core/widgets/custom_text_form_.dart';
-import 'package:zrc/core/widgets/custom_text_button.dart';
-import 'package:zrc/core/widgets/show_error_dialog.dart';
+import '../logic/cubit/auth_cubit.dart';
+import 'widgets/background_shapes.dart';
+import 'widgets/log_in_header.dart';
+import '../../extensions/navigation.dart';
+import '../../router/routes.dart';
+import '../../themes/app_colors.dart';
+import '../../themes/app_text_styles.dart';
+import '../../utils/regex.dart';
+import '../../utils/spacing.dart';
+import '../../widgets/custom_text_form_.dart';
+import '../../widgets/custom_text_button.dart';
+import '../../widgets/show_error_dialog.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

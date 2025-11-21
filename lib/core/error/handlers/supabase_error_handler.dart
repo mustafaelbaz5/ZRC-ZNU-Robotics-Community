@@ -1,6 +1,6 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:zrc/core/error/models/app_error.dart';
-import 'package:zrc/core/error/types/error_type.dart';
+import '../models/app_error.dart';
+import '../types/error_type.dart';
 
 class SupabaseErrorHandler {
   /// Main handler: convert any Supabase or generic exception into AppError

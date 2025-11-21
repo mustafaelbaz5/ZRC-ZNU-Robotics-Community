@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:zrc/core/error/types/error_handler.dart';
-import 'package:zrc/core/error/models/app_error.dart';
-import 'package:zrc/core/utils/secure_storage.dart';
+import '../../../error/types/error_handler.dart';
+import '../../../error/models/app_error.dart';
+import '../../../utils/secure_storage.dart';
 
 class AuthService {
   final _supabase = Supabase.instance.client;
