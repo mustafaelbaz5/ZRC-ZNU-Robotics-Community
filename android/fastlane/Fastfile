@@ -10,8 +10,8 @@ platform :android do
     testers_list = [
       "aelbaz0189@gmail.com",
       "m9stafa05@gmail.com",
-      # "mohmmedhosni34@gmail.com",
-      # "Amrb3556@gmail.com",
+      "mohmmedhosni34@gmail.com",
+      "Amrb3556@gmail.com",
     ]
 
     # Convert array to comma-separated string
