@@ -1,5 +1,5 @@
-import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:zrc/core/auth/data/service/auth_service.dart';
+import 'package:zrc/core/error/models/app_error.dart';
 
 class AuthRepo {
   final AuthService _authService;
@@ -8,19 +8,16 @@ class AuthRepo {
     : _authService = authService ?? AuthService();
 
   /// Login user using email & password
-  Future<AuthResponse> login({
-    required String email,
-    required String password,
-  }) async {
+  Future<void> login({required String email, required String password}) async {
     try {
-      final result = await _authService.loginUser(
-        email: email,
-        password: password,
-      );
-
-      return result;
+      await _authService.loginUser(email: email, password: password);
     } catch (e) {
-      rethrow;
+      // Propagate AppError
+      if (e is AppError) {
+        rethrow;
+      }
+      // Convert any other exception to AppError
+      throw AppError.unknown('Something went wrong. Please try again.');
     }
   }
 }
