@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:zrc/core/auth/logic/cubit/auth_cubit.dart';
+import 'package:zrc/core/auth/ui/widgets/background_shapes.dart';
+import 'package:zrc/core/auth/ui/widgets/log_in_header.dart';
 import 'package:zrc/core/extensions/navigation.dart';
 import 'package:zrc/core/router/routes.dart';
 import 'package:zrc/core/themes/app_colors.dart';
@@ -62,42 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Stack(
               children: [
                 // Background shapes
-                Positioned(
-                  top: -100,
-                  left: -100,
-                  child: Container(
-                    width: 200.w,
-                    height: 200.w,
-                    decoration: BoxDecoration(
-                      color: AppColors.lightBlue.withAlpha(50),
-                      shape: BoxShape.circle,
-                    ),
-                  ),
-                ),
-                Positioned(
-                  bottom: -120,
-                  right: -80,
-                  child: Container(
-                    width: 250.w,
-                    height: 250.w,
-                    decoration: BoxDecoration(
-                      color: AppColors.lightBlue.withAlpha(50),
-                      shape: BoxShape.circle,
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: 150,
-                  right: -60,
-                  child: Container(
-                    width: 150.w,
-                    height: 150.w,
-                    decoration: BoxDecoration(
-                      color: AppColors.lightBlue.withAlpha(30),
-                      shape: BoxShape.circle,
-                    ),
-                  ),
-                ),
+                const BackgroundShapes(),
 
                 // Login form
                 SingleChildScrollView(
@@ -111,22 +78,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          verticalSpacing(40),
-
-                          // Title
-                          Text(
-                            'Welcome Back',
-                            textAlign: TextAlign.center,
-                            style: AppTextStyles.font32BlackBold.copyWith(
-                              fontSize: 32.sp,
-                            ),
-                          ),
-                          verticalSpacing(8),
-                          Text(
-                            'Login with your university email and password',
-                            textAlign: TextAlign.center,
-                            style: AppTextStyles.font16GreyRegular.copyWith(),
-                          ),
+                          verticalSpacing(50),
+                          const LogInHeader(),
                           verticalSpacing(60),
                           // Email Field
                           Align(
@@ -135,7 +88,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               'Email',
                               style: AppTextStyles.font16BlackBold.copyWith(
                                 fontSize: 16.sp,
-                                color: Colors.white,
                               ),
                             ),
                           ),
@@ -148,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               if (value == null || value.isEmpty) {
                                 return 'Email cannot be empty';
                               } else if (!AppRegex.isEmailValid(value.trim())) {
-                                return 'Please enter a valid email';
+                                return 'Please enter a valid email[*****@ais.znu.edu.eg]';
                               }
                               return null;
                             },
@@ -162,7 +114,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               'Password',
                               style: AppTextStyles.font16BlackBold.copyWith(
                                 fontSize: 16.sp,
-                                color: Colors.white,
                               ),
                             ),
                           ),
@@ -200,7 +151,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             buttonWidth: double.infinity,
                             borderRadius: 12.r,
                           ),
-                          verticalSpacing(40),
                         ],
                       ),
                     ),
