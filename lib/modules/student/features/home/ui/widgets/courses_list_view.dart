@@ -1,71 +1,82 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:zrc/core/utils/app_assets.dart';
-import 'package:zrc/modules/student/features/home/data/model/courses_card_model.dart';
-import 'package:zrc/modules/student/features/home/ui/widgets/courses_list_view_item.dart';
+import '../../../../../../core/utils/app_assets.dart';
+import '../../data/model/courses_card_model.dart';
+import 'courses_list_view_item.dart';
 
 class CoursesListView extends StatelessWidget {
   const CoursesListView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      padding: EdgeInsets.symmetric(vertical: 16.h),
-      child: Column(
-        children: courses
-            .map(
-              (course) => Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.h),
-                child: CoursesListViewCard(coursesCardModel: course),
-              ),
-            )
-            .toList(),
+    return SizedBox(
+      height: 260.h,
+      child: ListView.separated(
+        scrollDirection: Axis.horizontal,
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        physics: const BouncingScrollPhysics(),
+        itemCount: _dummyCourses.length,
+
+        // Item Builder
+        itemBuilder: (context, index) {
+          return SizedBox(
+            width: 230.w,
+            child: CoursesListViewCard(
+              coursesCardModel: _dummyCourses[index],
+              onTap: () {},
+            ),
+          );
+        },
+
+        // Separator Builder → space between items
+        separatorBuilder: (context, index) => SizedBox(width: 16.w),
       ),
     );
   }
 }
 
-List<CoursesCardModel> courses = [
+// ==================== Dummy Data ====================
+final List<CoursesCardModel> _dummyCourses = [
   CoursesCardModel(
-    image: AppAssets.onBoardingBanner1,
+    image: 'assets/images/test.jpg',
     title: 'Mathematics',
     description: 'Learn the basics of algebra, geometry, and calculus.',
     instructor: 'Mustafa Elbaz',
-    data: '17 - 5 - 2023',
+    data: '17 May 2023',
   ),
   CoursesCardModel(
     image: AppAssets.onBoardingBanner1,
     title: 'Physics',
     description: 'Explore the laws of nature, motion, and energy.',
     instructor: 'John Doe',
-    data: '17 - 5 - 2023s',
+    data: '17 May 2023',
   ),
   CoursesCardModel(
-    image: AppAssets.onBoardingBanner1,
-    title: 'Mathematics',
-    description: 'Learn the basics of algebra, geometry, and calculus.',
-    instructor: 'Mustafa Elbaz',
-    data: '17 - 5 - 2023',
+    image: 'assets/images/test.jpg',
+    title: 'Chemistry',
+    description: 'Discover the world of elements, compounds, and reactions.',
+    instructor: 'Dr. Sarah Smith',
+    data: '20 May 2023',
   ),
   CoursesCardModel(
-    image: AppAssets.onBoardingBanner1,
-    title: 'Physics',
-    description: 'Explore the laws of nature, motion, and energy.',
-    instructor: 'John Doe',
-    data: '17 - 5 - 2023',
+    image: 'assets/images/test.jpg',
+    title: 'Computer Science',
+    description: 'Master programming fundamentals and algorithms.',
+    instructor: 'Ahmed Hassan',
+    data: '22 May 2023',
   ),
   CoursesCardModel(
-    image: AppAssets.onBoardingBanner1,
-    title: 'Mathematics',
-    description: 'Learn the basics of algebra, geometry, and calculus.',
-    instructor: 'Mustafa Elbaz',
-    data: '17 - 5 - 2023',
+    image: 'assets/images/test.jpg',
+    title: 'Biology',
+    description: 'Explore the science of life and living organisms.',
+    instructor: 'Dr. Emily Chen',
+    data: '25 May 2023',
   ),
   CoursesCardModel(
-    image: AppAssets.onBoardingBanner1,
-    title: 'Physics',
-    description: 'Explore the laws of nature, motion, and energy.',
-    instructor: 'John Doe',
-    data: '17 - 5 - 2023',
+    image: 'assets/images/test.jpg',
+    title: 'English Literature',
+    description: 'Analyze classic and contemporary literary works.',
+    instructor: 'Prof. Michael Brown',
+    data: '28 May 2023',
   ),
 ];
