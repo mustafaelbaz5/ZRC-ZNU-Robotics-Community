@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:zrc/modules/student/core/widgets/student_scaffold.dart';
+import 'package:zrc/modules/student/features/courses/ui/courses_screen.dart';
+import 'package:zrc/modules/student/features/materials/ui/materials_screen.dart';
+import 'package:zrc/modules/student/features/profile/ui/profile_screen.dart';
 import '../auth/logic/cubit/auth_cubit.dart';
 import '../../modules/student/features/home/ui/home_screen.dart';
 
@@ -23,10 +27,19 @@ class AppRouter {
             child: const LoginScreen(),
           ),
         );
-
+      // Student module
+      case Routes.studentScaffold:
+        return MaterialPageRoute(builder: (_) => const StudentScaffold());
       case Routes.studentHomeScreen:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
+      case Routes.studentCoursesScreen:
+        return MaterialPageRoute(builder: (_) => const CoursesScreen());
+      case Routes.studentMaterialScreen:
+        return MaterialPageRoute(builder: (_) => const MaterialsScreen());
+      case Routes.studentProfileScreen:
+        return MaterialPageRoute(builder: (_) => const ProfileScreen());
 
+      //Instructor module
       default:
         return null;
     }
