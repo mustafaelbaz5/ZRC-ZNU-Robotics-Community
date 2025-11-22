@@ -1,5 +1,5 @@
-import 'error_details.dart';
 import '../types/error_type.dart';
+import 'error_details.dart';
 
 class AppError implements Exception {
   final String message;

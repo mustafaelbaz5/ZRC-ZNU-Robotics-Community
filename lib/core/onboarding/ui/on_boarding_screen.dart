@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../extensions/navigation.dart';
-import '../data/models/on_boarding_page_model.dart';
 import '../../router/routes.dart';
 import '../../themes/app_colors.dart';
 import '../../themes/app_text_styles.dart';
 import '../../utils/app_assets.dart';
 import '../../utils/spacing.dart';
 import '../../widgets/custom_text_button.dart';
+import '../data/models/on_boarding_page_model.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});

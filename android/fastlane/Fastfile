@@ -10,8 +10,8 @@ platform :android do
     testers_list = [
       "aelbaz0189@gmail.com",
       "m9stafa05@gmail.com",
-      # "mohmmedhosni34@gmail.com",
-      # "Amrb3556@gmail.com",
+      "mohmmedhosni34@gmail.com",
+      "Amrb3556@gmail.com",
     ]
 
     # Convert array to comma-separated string
@@ -23,7 +23,7 @@ platform :android do
       android_artifact_type: "APK",
       android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
       testers: testers_string,
-      release_notes: "ZRC [Zagazig National University - Robotics - Community]v1.0.0 (First Release)"
+      release_notes: "ZRC [Zagazig National University - Robotics - Community] Finish Home Ui With Button Navigation Bar (v.1.0.1)",
     )
   end
 end
