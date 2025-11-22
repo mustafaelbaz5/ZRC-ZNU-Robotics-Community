@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,8 +9,8 @@ import '../../../../../../core/utils/spacing.dart';
 import '../../../../../../core/widgets/custom_text_button.dart';
 
 class HomeHeader extends StatelessWidget {
-  const HomeHeader({super.key});
-
+  const HomeHeader({super.key, required this.navigationKey});
+  final GlobalKey<CurvedNavigationBarState> navigationKey;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -67,7 +68,9 @@ class HomeHeader extends StatelessWidget {
                             width: double.infinity,
                             child: CustomTextButton(
                               buttonText: 'Start Now',
-                              onPressed: () {},
+                              onPressed: () {
+                                navigationKey.currentState?.setPage(1);
+                              },
                               backgroundColor: Colors.white,
                               textStyle: AppTextStyles.font16BlackBold,
                               borderRadius: 12,

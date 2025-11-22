@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -10,6 +11,8 @@ import '../auth/logic/cubit/auth_cubit.dart';
 import '../auth/ui/login_screen.dart';
 import '../onboarding/ui/on_boarding_screen.dart';
 import 'routes.dart';
+
+final navigationKey = GlobalKey<CurvedNavigationBarState>();
 
 class AppRouter {
   Route<dynamic>? generateRoute(RouteSettings settings) {
@@ -29,9 +32,13 @@ class AppRouter {
         );
       // Student module
       case Routes.studentScaffold:
-        return MaterialPageRoute(builder: (_) => const StudentScaffold());
+        return MaterialPageRoute(
+          builder: (_) => StudentScaffold(navigationKey: navigationKey),
+        );
       case Routes.studentHomeScreen:
-        return MaterialPageRoute(builder: (_) => const HomeScreen());
+        return MaterialPageRoute(
+          builder: (_) => HomeScreen(navigationKey: navigationKey),
+        );
       case Routes.studentCoursesScreen:
         return MaterialPageRoute(builder: (_) => const CoursesScreen());
       case Routes.studentMaterialScreen:
