@@ -47,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return BlocConsumer<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is AuthSuccess) {
-          context.pushReplacementNamed(Routes.studentHomeScreen);
+          context.pushReplacementNamed(Routes.studentScaffold);
         } else if (state is AuthError) {
           showErrorDialog(
             context: context,
