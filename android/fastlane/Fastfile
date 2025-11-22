@@ -23,7 +23,7 @@ platform :android do
       android_artifact_type: "APK",
       android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
       testers: testers_string,
-      release_notes: "ZRC [Zagazig National University - Robotics - Community] Finish Home Ui With Button Navigation Bar (v.1.0.1)",
+      release_notes: "ZRC [Zagazig National University - Robotics - Community] fix production build (v.1.0.2)",
     )
   end
 end
