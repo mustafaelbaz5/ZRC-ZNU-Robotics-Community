@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import '../../../error/types/error_handler.dart';
+
 import '../../../error/models/app_error.dart';
+import '../../../error/types/error_handler.dart';
 import '../../../utils/secure_storage.dart';
 
 class AuthService {

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:zrc/modules/student/core/widgets/student_scaffold.dart';
-import 'package:zrc/modules/student/features/courses/ui/courses_screen.dart';
-import 'package:zrc/modules/student/features/materials/ui/materials_screen.dart';
-import 'package:zrc/modules/student/features/profile/ui/profile_screen.dart';
-import '../auth/logic/cubit/auth_cubit.dart';
-import '../../modules/student/features/home/ui/home_screen.dart';
 
+import '../../modules/student/core/widgets/student_scaffold.dart';
+import '../../modules/student/features/courses/ui/courses_screen.dart';
+import '../../modules/student/features/home/ui/home_screen.dart';
+import '../../modules/student/features/materials/ui/materials_screen.dart';
+import '../../modules/student/features/profile/ui/profile_screen.dart';
+import '../auth/logic/cubit/auth_cubit.dart';
 import '../auth/ui/login_screen.dart';
 import '../onboarding/ui/on_boarding_screen.dart';
 import 'routes.dart';

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:zrc/modules/student/features/home/data/model/category_model.dart';
-import 'package:zrc/modules/student/features/home/ui/widgets/categories_list_view_item.dart';
+
+import '../../data/model/category_model.dart';
+import 'categories_list_view_item.dart';
 
 class CategoriesListView extends StatefulWidget {
   const CategoriesListView({super.key});
